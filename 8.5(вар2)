@@ -1,0 +1,18 @@
+#1 Лінійний
+import numpy
+import random
+a=numpy.zeros(10,dtype=int)#створюємо масив
+b=5
+for c in range(10):#заповнюємо масив рандомними числами
+    a[c]=random.randint(-5,5)
+print(a)
+
+d=len(a)#розмір масиву
+e=0
+while e<d and a[e]!=b:#поки лічильник не буду більше розміру масиву
+    e+=1#лічильний , який з кожною ітерацією збільшується
+
+if e==d:#якщо рівний , то не знайдено
+    print('Nothing')
+else:# а якщо зупиняється на цьому значені як на його місці
+    print(f'Element - {b}; place - {e}')
