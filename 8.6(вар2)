@@ -1,0 +1,25 @@
+#2 Бінарний
+import numpy
+import random
+f=numpy.zeros(10,dtype=int)#створюємо масив з нулів
+g=4 #шуаний елемент
+for h in range(10):
+    f[h]=random.randint(0,5)#заповнюємо масив рандомними числами
+print(f)
+f=sorted(f)#бінарний пошук процює тільки в відсортованій послідовності
+i=0#ліва граница
+j=len(f)-1#права граница
+k=0
+l=False
+while i<=j and not l:
+    k=(i+j)//2#середина масиву
+    if f[k]==g:#перевірка чи є середнє значеня рівне шуканому
+        l=True
+    elif f[k]<g:#якщо середнє значення менше за шукане то ліва границя зміститься в право
+        i=k+1
+    else:#і навпаки
+        j=k-1
+if not l:
+    print('Nothing')
+else:
+    print(f'Element - {g} place - {k}')
